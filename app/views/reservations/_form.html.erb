@@ -1,0 +1,179 @@
+<%= form_for([@establishment, @establishment.reservations.new]) do |f| %>
+  <div class= "form-row text-center">
+    <div class="col-auto my-1">
+      <p><strong>A quel dates souhaitez vous partir?</strong></p>
+    </div>
+
+    <div class="col-auto my-1">
+      <%= f.text_field :start_date, class: "mr-sm-2 checkin-date", placeholder: "Date d'arrivée", as: :string, label: false, id: "start_date" %>
+    </div>
+    <div class="col-auto my-1">
+      <%= f.text_field :end_date, class: "mr-sm-2 checkout-date", placeholder: "Date de départ", as: :string, label: false, id: "end_date" %>
+    </div>
+
+
+
+  </div>
+  <hr />
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Type de chambre</th>
+      <th scope="col">Prix pour <%= %> nuit(s)</th>
+      <th scope="col">Vos options</th>
+      <th scope="col">Nombre de personnes</th>
+      <th scope="col">Récapitulatif</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><p><%= @establishment.pmr_room_type %></p><!-- <p>.Douche à l'italienne .Rez de chaussez</p><p>plus d'informations</p> --></td>
+      <td><h3>€ <%= @establishment.price %></h3><p>Taxes de séjour non incluses</p></td>
+      <td><ul><li>Petits déjeuners</li><li>Parking</li></ul></td>
+      <td><input type="number" value="1" min="0" max="5" step="1"/></td>
+      <td><%= f.submit "Reserver maintenant" %></td>
+    </tr>
+<!--     <tr>
+      <td><p>.Chambre standard accessible</p><p>.Douche à l'italienne .Rez de chaussez</p><p>plus d'informations</p></td>
+      <td><h3>€ 252</h3><p>Taxes de séjour non incluses</p></td>
+      <td><ul><li>Petits déjeuners</li><li>Parking</li></ul></td>
+      <td><input type="number" value="1" min="0" max="5" step="1"/></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><p>.Chambre standard accessible</p><p>.Douche à l'italienne .Rez de chaussez</p><p>plus d'informations</p></td>
+      <td><h3>€ 252</h3><p>Taxes de séjour non incluses</p></td>
+      <td><ul><li>Petits déjeuners</li><li>Parking</li></ul></td>
+      <td><input type="number" value="1" min="0" max="5" step="1"/></td>
+      <td></td>
+    </tr> -->
+  </tbody>
+</table>
+
+
+
+  <br/>
+<% end %>
+
+
+
+<script>
+
+  function checkDate(date) {
+    dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+    return [$.inArray(dmy, unavailableDates) == -1];
+  }
+
+  $(function() {
+
+    unavailableDates = [];
+
+    specialDates = [];
+
+    function specialCheck() {
+
+      var start_date = $('#reservation_start_date').datepicker('getDate');
+      var end_date = $('#reservation_end_date').datepicker('getDate');
+      var nights = Math.round((end_date - start_date)/1000/60/60/24 + 1) - 1
+
+      var input = {
+        'start_date': start_date,
+        'end_date': end_date
+      }
+
+      $.ajax({
+        url: '<%#= preview_establishment_path(@establishment) %>',
+        data: input,
+        success: function(data) {
+
+          if (data.conflict) {
+            $('#message').text("Les dates ne sont pas disponibles");
+            $('#preview').hide();
+            $('#btn_book').attr('disabled', true);
+          } else {
+            $('#message').text("");
+            $('#preview').show();
+            $('#btn_book').attr('disabled', false);
+
+            //----------- START NEW UPDATE
+
+            $('#special_list').empty();
+            var selectedDates = [];
+
+            // Step 1: Create an array of selected dates
+            while (start_date <= end_date) {
+                selectedDates.push($.datepicker.formatDate('d-m-yyyy', new Date(start_date)));
+                start_date.setDate(start_date.getDate() + 1);
+            };
+
+            // Step 2: Create an array of special dates
+            var selectedSpecialDate = specialDates.filter(function(sDate){
+                var d = $.datepicker.formatDate('d-m-yyyy', new Date(sDate.day));
+                return selectedDates.indexOf(d) !== -1;
+            });
+
+            var total = (nights - selectedSpecialDate.length) * <%= @establishment.price %>;
+            if (selectedSpecialDate.length > 0) {
+              $('#special_details').show();
+
+              selectedSpecialDate.map(function(date) {
+                  total = date.price * nights
+                  $('#special_list').append('<li class="text-right">('+ date.day + '): €' + date.price +'</li>');
+              });
+            } else {
+              $('#special_details').hide();
+            }
+
+            //----------- END NEW UPDATE
+
+            $('#reservation_nights').text(nights);
+            $('#reservation_total').text(total);
+          }
+        }
+      });
+    }
+
+    $.ajax({
+      url: '<%#= preload_establishment_path(@establishment) %>',
+      dateTyp: 'json',
+      success: function(data) {
+
+        specialDates = data.special_dates;
+
+        $.each(data.reservations, function(arrID, arrValue) {
+            for(var d = new Date(arrValue.start_date); d <= new Date(arrValue.end_date); d.setDate(d.getDate() + 1)) {
+              unavailableDates.push($.datepicker.formatDate('d-m-yyyy', d));
+            }
+        });
+
+        $.each(data.unavailable_dates, function(arrID, arrValue) {
+            unavailableDates.push($.datepicker.formatDate('d-m-yyyy', new Date(arrValue.day)));
+        });
+
+        $('#reservation_start_date').datepicker({
+          dateFormat: 'dd-mm-yyyy',
+          minDate: 0,
+          maxDate: '2y',
+          beforeShowDay: checkDate,
+          onSelect: function(selected) {
+            $('#reservation_end_date').datepicker("option", "minDate", selected);
+            $('#reservation_end_date').attr("disabled", false);
+            specialCheck();
+          }
+        });
+
+        $('#reservation_end_date').datepicker({
+          dateFormat: 'dd-mm-yyyy',
+          minDate: 0,
+          maxDate: '2y',
+          beforeShowDay: checkDate,
+          onSelect: function(selected) {
+            $('#reservation_start_date').datepicker("option", "maxDate", selected);
+            specialCheck();
+          }
+        });
+      }
+    });
+
+  });
+</script>

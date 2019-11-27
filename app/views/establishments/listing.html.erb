@@ -1,0 +1,70 @@
+<% content_for :navbar do %>
+     <%= render 'shared/nav-blank' %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'establishment_menu' %>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        Listing
+      </div>
+
+      <div class="panel-body">
+        <div class="container">
+          <%= form_for @establishment do |f| %>
+        <div class="row">
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Type de Logement</label>
+              <%= f.select :home_type, [["Apartement","Apartement"],["Maison","Maison"],["BnB","BnB"]],
+              id: "home_type", prompt: "Selectionnez", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Type de Chambre</label>
+              <%= f.select :room_type, [["En Entier","En Entier"],["Privé","Privé"],["Partagé","Partagé"]],
+              id: "room_type", prompt: "Selectionnez", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Nombre de personne</label>
+              <%= f.select :accommodate, [["1",1],["2",2],["3",3],["4+",4]],
+              id: "accommodate", prompt: "Selectionnez", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Nombre de chambre</label>
+              <%= f.select :bed_room, [["1",1],["2",2],["3",3],["4+",4]],
+              id: "bed_room", prompt: "Selectionnez", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-4 select">
+            <div class="form-group">
+              <label>Nombre de salle de bain</label>
+              <%= f.select :bath_room, [["1",1],["2",2],["3",3],["4+",4]],
+              id: "bath_room", prompt: "Selectionnez", class: "form-control" %>
+            </div>
+          </div>
+
+        </div>
+
+        <div><%= f.submit "Sauvegardez", class: "btn btn-normal" %></div>
+
+      <% end  %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

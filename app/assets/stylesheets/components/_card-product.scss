@@ -1,0 +1,140 @@
+.card-product {
+  overflow: hidden;
+  height: 90px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h6 {
+  color: #266EFF;
+}
+
+.card-product p {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product a {
+  color: #0E0000;
+}
+
+.card-product a:hover {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-room {
+  overflow: hidden;
+  height: 230px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+}
+
+ .non-a a {
+  color: inherit;
+}
+
+ .non-a a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-room img {
+  height: 100%;
+  width: 33%;
+  object-fit: cover;
+}
+
+.card-room h6 {
+  color: #266EFF;
+}
+
+.card-room p {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.card-room .card-room-infos {
+  padding: 16px 8px 16px 8px;
+}
+
+.card-room h4 {
+  font-weight: bold;
+}
+
+.card-room-top {
+  padding-top: 8px;
+  width: 100%;
+}
+
+.card-room ul {
+  list-style-type: circle;
+}
+.card-room li {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.right-card-text {
+  text-align: right;
+}
+
+.right-card-text h4 {
+  color: #2FA822;
+  font-size: 22px;
+}
+
+.right-card-text h5 {
+  color: #999A9E;
+  font-size: 12px;
+  margin-top: -10px;
+}
+
+.bee-card {
+  max-width: 27px;
+  max-height: 22px;
+}
+
+.bee-card-modal {
+  width: 250px;
+}
+
+.card-price {
+  position: absolute;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  right: 10px;
+  padding-right: 23px;
+}
+
+.card-currency {
+  position: absolute;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  right: 10px;
+  padding-right: 23px;
+  padding-top: 7px;
+}
+

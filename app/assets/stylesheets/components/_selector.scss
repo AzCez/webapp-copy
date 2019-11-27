@@ -1,0 +1,39 @@
+.sidebar-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+.sidebar-item {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #82888a;
+}
+
+.sidebar-link {
+  color: #82888a;
+  text-decoration: none;
+}
+
+.sidebar-link:hover, .sidebar-link:focus {
+  color: #CACCCD;
+  text-decoration: none;
+}
+
+.active.sidebar-link {
+  color: #565A5C;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.form-group select {
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+    padding: 10px;
+    appearance: none;
+    text-align: center;
+    text-align-last: center;
+    font-size: 20px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}

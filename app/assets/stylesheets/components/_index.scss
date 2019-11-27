@@ -1,0 +1,31 @@
+// Import your components CSS files here.
+@import "alert";
+@import "avatar";
+@import "navbar";
+@import "search";
+@import "button";
+@import "banner";
+@import "card-category";
+@import "card-product";
+@import "card-trip";
+@import "card-grid";
+@import "footer";
+@import "navbar";
+@import "notification";
+@import "tabs";
+@import "subscribe";
+@import "selector";
+@import "table";
+@import "carousel";
+@import "map";
+@import "padding";
+
+
+.bandeau {
+  margin-top:100px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color:#266EFF;
+  width: 100%;
+
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>mobeetravel.com</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <!-- Start of HubSpot Embed Code -->
+    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5757500.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+     <!-- End of HubSpot Embed Code -->
+  </head>
+  <body>
+    <article>
+      <% if content_for?(:navbar) %>
+        <%= yield(:navbar) %>
+      <% else %>
+        <%= render 'shared/navbar2'%>
+      <% end %>
+       <%= render 'shared/flashes'%>
+      <main>
+        <%= yield %>
+      </main>
+        <%= render 'shared/footer' %>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+    </article>
+  </body>
+</html>
+
+<script type="text/javascript">
+<!--
+if (screen.width <= 699) {
+document.location = "https://mobile.mobeetravel.com";
+}
+//-->
+</script>

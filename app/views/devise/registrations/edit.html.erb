@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+  <div class="col-5">
+    <h2 class="text-center">Editer votre profil <%#= resource_name.to_s.humanize %></h2>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+        <div class="row">
+          <div class="col-4">
+            <%#= image_tag user_avatar(resource, 100), class: 'rounded-circle' %>
+          </div>
+          <div class="col-8">
+            <% if @user.avatar? %>
+              <p>
+                <%= image_tag @user.avatar_url(:thumb) %>
+              </p>
+            <% end %>
+            <%= f.input :avatar, label: 'Photo', as: :file %>
+          </div>
+        </div>
+        <%= f.input :first_name, label: 'Prénom', required: true, autofocus: true %>
+        <%= f.input :last_name, label: 'Nom de famille', required: true, autofocus: true %>
+        <%= f.input :email, label: 'Email', required: true, autofocus: true %>
+        <%= f.input :phone_number, label: 'Numéro de téléphone', autofocus: true %>
+        <%= f.input :description, label: 'Presentez-vous', autofocus: true %>
+        <%= f.input :address, label: 'Adresse', autofocus: true %>
+        <%= f.input :company_name, label: 'Nom de votre entreprise', autofocus: true %>
+        <%= f.input :compagny_business, label: 'Quel est votre activité', autofocus: true %>
+        <%= f.input :company_website, label: 'Votre site internet', autofocus: true %>
+        <% f.input :company_tax_id, autofocus: true %>
+        <% f.input :iban, autofocus: true %>
+        <% f.input :bic, autofocus: true %>
+        <%= f.input :medical_bed, label: 'Lit médicalisé', autofocus: true %>
+        <%= f.input :person_lift, label: 'Lève personne', autofocus: true %>
+        <%= f.input :others_accessibility_need, label: 'Vos besoins de materiel spécifiques', autofocus: true %>
+        <%= f.input :nurse, label: 'Infirmière', autofocus: true %>
+        <%= f.input :help_to_the_person, label: 'Aide à la personne', autofocus: true %>
+        <%= f.input :physio_therapist, label: 'Physiothérapeute', autofocus: true %>
+        <%= f.input :others_medical_help_need, label: "Vos besoins d'assistance spécifiques", autofocus: true %>
+        <%= f.input :gender, label: "Vous êtes une femme ou un homme?", autofocus: true %>
+        <%= f.input :birth_date, label: "Votre date d'anniversaire", autofocus: true %>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+
+        <%= f.input :password,
+                    hint: "laisser blanc si vous ne changez pas de mot de passe",
+                    required: false,
+                    input_html: { autocomplete: "nouveau mot de passe" } %>
+        <%= f.input :password_confirmation,
+                    required: false,
+                    input_html: { autocomplete: "nouveau mot de passe" } %>
+        <%= f.input :current_password,
+                    hint: "Nous avons besoin de votre mot de passe actuel pour enregistrer les changements",
+                    required: true,
+                    input_html: { autocomplete: "mot de passe actuel" } %>
+      </div>
+
+      <div class="form-actions text-center mb-5">
+        <%= f.button :submit, "Mise à jour", class: "btn btn-flat" %>
+      </div>
+    <% end %>
+
+    <% link_to "Retour", :back %>
+  </div>
+</div>

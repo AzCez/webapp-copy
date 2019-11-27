@@ -1,0 +1,40 @@
+.card-filter {
+  overflow: hidden;
+  height: auto;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-filter img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-filter h6 {
+  color: #266EFF;
+}
+
+.card-filter p {
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-filter a {
+  color: #0E0000;
+}
+
+.card-filter a:hover {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.card-filter .card-filter-infos {
+  padding: 16px;
+}
+

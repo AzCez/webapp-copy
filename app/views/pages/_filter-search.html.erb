@@ -1,0 +1,57 @@
+
+
+  <div class="card-filter">
+    <div class="card-filter-infos">
+      <%= search_form_for @search, url: search_path, remote: false do |f| %>
+
+      <label>Destination:</label>
+      <%= text_field_tag :search, params[:search], class: "form-control", id: "auto_address" %>
+
+
+
+<!-- PRICE -->
+      <div class="row">
+        <div class="col">
+          <label>Prix Min:</label>
+          <%= f.text_field :price_gteq, class: "form-control" %>
+        </div>
+        <div class="col">
+          <label>Prix Max:</label>
+          <%= f.text_field :price_lteq, class: "form-control" %>
+        </div>
+      </div>
+
+
+<!-- DATE -->
+
+   <div class="row">
+        <div class="col">
+          <label>Date d'arrivée</label>
+         <%= text_field_tag :start_date, params[:start_date], class: "mr-sm-2 checkin-date", id: "start_date" %>
+        </div>
+        <div class="col">
+          <label>Date de départ:</label>
+         <%= text_field_tag :end_date, params[:end_date], class: "mr-sm-2 checkout-date", id: "end_date" %>
+        </div>
+      </div>
+
+
+
+
+<!-- Number of Guests -->
+
+      <div class="form-group select">
+        <label>Nombre de personnes</label>
+        <%= f.select :accommodate_gteq, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5], ["6", 6], ["7", 7], ["8", 8], ["9+", 9]], id: "accommodate", prompt: "Selectionner", class: "form-control" %>
+      </div>
+
+      <hr/>
+      <div class="text-center">
+        <%= f.submit "Rechercher", class: "btn btn-flat" %>
+      </div>
+
+      <% end %>
+    </div>
+  </div>
+
+

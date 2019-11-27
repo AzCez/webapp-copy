@@ -1,0 +1,38 @@
+<% content_for :navbar do %>
+    <%= render 'shared/nav-blank' %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-3">
+    <%= render 'establishment_menu' %>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+
+      <div class="panel-heading">
+        Location
+      </div>
+
+      <div class="panel-body">
+        <div class="container">
+          <%= form_for @establishment do |f| %>
+
+            <div class="row">
+              <div class="form-group">
+                <label>Adresse</label>
+                <%= f.text_field :address_detail, placeholder: "Votre adresse en détail", class: "form-control" %>
+                <%= f.text_field :address, placeholder: "Entrez votre ville", class: "form-control", id: "auto_address" %>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <%= f.submit "Sauvegardez", class: "btn btn-form" %>
+            </div>
+
+          <% end  %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

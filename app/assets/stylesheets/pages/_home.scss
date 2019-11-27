@@ -1,0 +1,106 @@
+.home-bottom {
+  background-color: #F0F3FC;
+}
+
+.carrousel-section {
+  background-color: white;
+}
+
+.map-home > .mapboxgl-map {
+  width: 130px !important;
+  margin-top: 20px;
+  height: 130px !important;
+  object-fit: cover;
+}
+
+
+#home-search-bar-box {
+
+  background-color: white;
+
+}
+
+#seach-bar {
+  padding-left: 170px;
+  padding-right: 100px;
+}
+
+.checkin-date {
+  background-color: #ffff !important;
+}
+
+.checkout-date {
+  height: 38px;
+  background-color: #ffff !important;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.destination, .date, .number-of-persons {
+  display: inline-block !important;
+  vertical-align: top;
+  width: calc(25% - 3px)!important;
+  margin-left: 3px;
+  height: 50px;
+}
+
+//.date {
+//  //display: inline-block;
+//  //vertical-align: top;
+//  width: calc(25% - 3px);
+//  margin-left: 3px;
+//  height: 50px;
+//}
+
+
+//.form-group {
+//  //.form-control {
+//  //  width: 150px!important;
+//  //  height: calc(1.5em + 0.75rem + 2px);
+//  //  //margin: 5px;
+//  //}
+//  display: inline-block!important;
+//}
+//
+.date-form-div {
+  background-color: white;
+  border: 1px solid #ced4da;
+  border-radius: 2px;
+}
+
+//
+.form-group-addon {
+  display: inline-block !important;
+}
+
+//
+.home-date {
+  border: 0px !important;
+  background-color: white !important;
+  width: 130px !important;
+}
+
+.search-wrapper .form-group {
+  display: inline-block !important;
+}
+
+//Number of persons on homepage search
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.dropdown-menu {
+  height: 100%;
+  //overflow: auto;
+}
+.btn-group1{
+  width:100%;
+}
+#withChild{
+  display: none;
+}

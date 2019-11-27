@@ -1,0 +1,73 @@
+
+.search-form-control {
+  position: relative;
+}
+
+.search-form-control .btn {
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 8px;
+}
+
+.search-form-control .form-control {
+  height: 3.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border: 1px solid #E7E7E7;
+}
+
+.search-form-control .form-control:focus {
+  border: 1px solid #1EDD88;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+
+
+.search-home {
+  position: relative;
+  background-color: transparent;
+}
+
+
+.search-home input {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  border: 0px;
+  height: 38px;
+  padding-left: 20px;
+}
+
+
+.search-home input:focus {
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.search-home .py-4{
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  background-color: white;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.08);
+}
+
+.seach-filter {
+  margin: 1%
+}
+
+.seach-filter-container {
+  background-color: #f5f6fb;
+  padding: 10%;
+}
+
+.accessible-container {
+  background-color: #f5f6fb;
+  padding: 10%;
+  width: 263px;
+}
+
+.accessible-container ul {
+  padding: 5px;
+
+}

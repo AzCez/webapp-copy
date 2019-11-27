@@ -1,0 +1,44 @@
+<ul class="sidebar-link">
+  <li class="sidebar_item">
+    <%= link_to "Listing", listing_establishment_path %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+  </li>
+   <li class="sidebar_item">
+    <%= link_to "Prix", pricing_establishment_path %>
+    <% if !@establishment.price.blank?  %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end  %>
+  </li>
+   <li class="sidebar_item">
+    <%= link_to "Description", description_establishment_path %>
+     <% if !@establishment.listing_name.blank?  %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end  %>
+  </li>
+  <!-- Uncomment once photo added to controller -->
+  <li class="sidebar_item">
+    <%= link_to "Photos", photo_upload_establishment_path %>
+     <%# if !@establishment.photos.blank?  %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <%# end  %>
+  </li>
+   <li class="sidebar_item">
+    <%= link_to "Équipements", amenities_establishment_path %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+  </li>
+   <li class="sidebar_item">
+    <%= link_to "Adresse", location_establishment_path %>
+     <% if !@establishment.address.blank?  %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end  %>
+  </li>
+</ul>
+<hr/>
+
+  <!-- Add once photo added to controller && !@establishment.photos.blank?-->
+<% is_ready = !@establishment.active && !@establishment.price.blank? && !@establishment.listing_name.blank? && !@establishment.address.blank?%>
+
+<%= form_for @establishment do |f| %>
+  <%= f.hidden_field :active, value: true %>
+  <%= f.submit "Publiez", id: "publish_button", class: "btn btn-normal btn-block", disabled: !is_ready %>
+<% end %>

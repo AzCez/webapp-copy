@@ -1,0 +1,11 @@
+<% if @photos.count > 0 %>
+
+  <% @photos.each do |photo| %>
+
+    <%= image_tag(photo.url) %>
+
+      <%= link_to "trash", establishment_photo_path(@establishment, photo), :method => :delete, data: {confrim: "êtes vous sur?"} %>
+
+  <% end %>
+
+<% end %>

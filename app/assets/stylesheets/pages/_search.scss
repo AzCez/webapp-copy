@@ -1,0 +1,60 @@
+
+#search-result-container {
+  border-style: dotted;
+  border-color: green;
+  display: flex;
+}
+
+
+#left {
+  // display: flex;
+  // border-style: dotted;
+  // border-color: blue;
+
+
+}
+
+#side-search-form{
+  border-style: dotted;
+flex-grow: 0;
+// width: 300px;
+flex-basis: 0;
+
+
+}
+
+
+
+#room-cards{
+  // display: grid;
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+
+// SEARCH FILTER
+
+.checkin-date{
+  height:38px;
+  width: 193px;
+  background-color: #ffff !important;
+}
+
+.checkout-date{
+  height:38px;
+  width: 193px;
+  background-color: #ffff !important;
+}
+
+
+// MAP
+
+#map{
+
+  margin-top: 15px;
+  height: 130px;
+  width: 225px;
+
+
+}
+

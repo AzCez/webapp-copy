@@ -1,0 +1,21 @@
+.subscribe-form-control {
+  position: relative;
+}
+
+.subscribe-form-control .btn {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+}
+
+.subscribe-form-control .form-control {
+  height: 3.5rem;
+  border: 0px;
+  background: #0A0E3D;
+  color: #fff;
+}
+
+.subscribe-form-control .form-control:focus {
+  outline: none !important;
+}

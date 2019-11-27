@@ -1,0 +1,106 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1526821799652-2dc51675628e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1383&q=80);">
+  <div class="container banner-subtitle">
+    <h1><strong>Trouvez votre destination accessible</strong></h1>
+    <a href='https://share.hsforms.com/1V0pslr6lRAe7j73Uv9dJHw3feik' target: :_blank><strong>Besoin d'un devis, vous avez une demande précise  &rarr;</strong></a>
+  </div>
+</div>
+
+<section class="search-home">
+  <div class="container">
+    <div class="row py-4" style="margin-top: -50px;">
+      <div class="col text-center">
+        <h3><strong>Besoin d'un conseil, appelez notre équipe au 09 82 32 35 16</strong>
+        </h3>
+        <%#= render 'pages/search-home' %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container pt-5 pb-5">
+  <div class="row pt-2 pb-2">
+
+<!-- Search Filter Container -->
+
+    <div class="col-3">
+      <div class="container mb-4">
+        <h5 class="font-weight-bold">Filtrer par:</h5>
+      </div>
+
+<!-- Search Filter Form -->
+
+      <div class="container seach-filter">
+        <%#= render 'filter-search' %>
+
+        <!-- Search MAP -->
+        <div
+          id="map"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        ></div>
+      </div>
+    </div>
+ <!-- Search Filter END -->
+
+    <div class="col-9">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="font-weight-bold" style="display:inline;">Environ:
+            </h5>
+            <p style="display:inline;"> <%= render partial: "establishments/establishment-count", locals: {establishments: @arrEstablishments} %> hébergements accessibles trouvés
+            </p>
+          </div>
+
+<!--            //FILTRES A AJOUTER
+         <div class="col-md-6">
+            <div style="text-align:right;float:right;">
+              <form>
+                <div class="form-group row">
+                  <label for="exampleFormControlSelect1" class="col-md-5 col-form-label">Rechercher par:</label>
+                  <div class="col-md-7">
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option>top du moment</option>
+                      <option>recommandation</option>
+                      <option>accessibilité</option>
+                    </select>
+                  </div>
+                </div>
+              </form>
+           </div>
+          </div> -->
+        </div>
+      </div>
+
+
+      <div class="non-a">
+
+      <%= render partial: "establishments/establishment-listing-horizontal", locals: {establishments: @arrEstablishments} %>
+      </div>
+
+<!--       <ul class="pagination justify-content-center" style="margin:20px 0">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item active">
+          <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul> -->
+
+</section>
+
+
+
+
+
+
+

@@ -1,0 +1,64 @@
+
+      <% establishments.each do |establishment| %>
+      <%#= link_to establishment, target: :_blank do %>
+      <div class="card-room mt-4">
+
+<!--          <img src="<%#= establishment.pictures[0] %>" alt="/images/blank.jpg" />-->
+          <%= image_tag establishment.pictures[0], alt: "web/logo/bigbee.svg" %>
+          <div class="card-room-infos card-room-top">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8">
+                  <h4><%= establishment.name %></h4>
+                  <h6 style="display:inline;"><i class="fas fa-map-marker-alt fa-sm"></i> <%= establishment.town %> </h6>
+                  <!-- <p style="display:inline;">(500 m du centre)</p> -->
+                </div>
+                <div class="col-md-4 text-center">
+                  <%= image_tag "web/logo/bigbee.svg", alt: "Mon image", class: "bee-card", "data-toggle" => "modal", 'data-target' => '#exampleModalCenter' %>
+                  <%= image_tag "web/logo/bigbee.svg", alt: "Mon image", class: "bee-card", "data-toggle" => "modal", 'data-target' => '#exampleModalCenter' %>
+                  <%= image_tag "web/logo/bigbee.svg", alt: "Mon image", class: "bee-card", "data-toggle" => "modal", 'data-target' => '#exampleModalCenter' %>
+                  <p>Hébergement accessible<p>
+                </div>
+              </div>
+            <hr />
+            <div class="container">
+              <div class="row">
+                <div class="col-md-7 line-limited">
+                  <ul>
+<!--                    <li class="<%#= 'text-line-display' if !establishment.suitable_swimming_pool %>">Piscine accessible</li>-->
+<!--                    <li class="<%#= 'text-line-display' if !establishment.breakfast %>">Petits déjeuners</li>-->
+<!--                    <li class="<%#= 'text-line-display' if !establishment.is_internet %>">Internet</li>-->
+<!--                    <li class="<%#= 'text-line-display' if !establishment.is_tv %>">Télévision</li>-->
+<!--                    <li class="<%#= 'text-line-display' if !establishment.is_air %>">Climatisé</li>-->
+<!--                    <li class="<%#= 'text-line-display' if !establishment.is_parking %>">Parking</li>-->
+<!--                    <li class="<%#= 'text-line-display' if !establishment.for_families %>">Pour les familles</li>-->
+
+                    <li class="text-line-display">Piscine accessible</li>
+                    <li class="text-line-display">Petits déjeuners</li>
+                    <li class="text-line-display">Internet</li>
+                    <li class="text-line-display">Télévision</li>
+                    <li class="text-line-display">Climatisé</li>
+                    <li class="text-line-display">Parking</li>
+                    <li class="text-line-display">Pour les familles</li>
+                    <!--
+                    <li>Materiel médical accepté</li>
+                    <li>Piscine accessible</li> -->
+                  </ul>
+                <h5>.</h5>
+                <!-- <h5 style="color: #2FA822; font-size: 13px; font-weight: bold;"><i class="fas fa-mug-hot"></i>Petits déjeuners inclus.</h5> -->
+                </div>
+                <div class="col-md-5 right-card-text">
+<!--                  <h4> € <%#= establishment.price %></h4>-->
+                  <h5>Prix moyen par nuit</h5>
+                  <button class="btn-show-room">
+                    Voir les disponibilités <i class="fas fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<%# end %>
+<% end %>

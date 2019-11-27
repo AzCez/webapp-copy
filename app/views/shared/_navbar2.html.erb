@@ -1,0 +1,65 @@
+<div id="nav" class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to root_path, class: "navbar-brand", id: "logo" do %>
+    <p><strong>mobeetravel.com</strong></p>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="">
+    <ul>
+      <li id="nav-center-link" class="mr-4">
+        <%= link_to "Hébergement", search_path, class: "navbar-center" %>
+      </li>
+      <li id="nav-center-link" class="mr-4">
+        <%= link_to "Transport", 'https://share.hsforms.com/1V0pslr6lRAe7j73Uv9dJHw3feik', target: :_blank, class: "navbar-center" %>
+      </li>
+      <li id="nav-center-link" class="mr-4">
+        <%= link_to "Besoins medicaux", 'https://share.hsforms.com/1V0pslr6lRAe7j73Uv9dJHw3feik', target: :_blank, class: "navbar-center" %>
+      </li>
+      <li id="nav-center-link" class="mr-4">
+        <%= link_to "Besoin d'un devis", 'https://share.hsforms.com/1V0pslr6lRAe7j73Uv9dJHw3feik', target: :_blank, class: "navbar-center" %>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to root_path, class: "nav-link" do %>
+             <i class="fas fa-search"></i>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to root_path, class: "nav-link" do %>
+             <i class="far fa-envelope"></i>
+          <% end %>
+        </li>
+        <li class="nav-item dropdown",>
+          <%#= image_tag  current_user.avatar_url, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <button class="btn-transparent" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Manage Listing", "#", class: "dropdown-item" %>
+            <%= link_to "List your space", "#", class: "dropdown-item" %>
+            <%= link_to "Your reservations", "#", class: "dropdown-item" %>
+            <%= link_to "Your trips", "#", class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Edit profile", edit_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Connexion", new_user_session_path, class: "btn-connection" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

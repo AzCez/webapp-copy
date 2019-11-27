@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-3">
+    <ul class="sidebar-list">
+      <li class="sidebar-item"><%= link_to "Votre Listing", establishments_path, class: "sidebar-link active" %></li>
+       <li class="sidebar-item"><%= link_to "Votre Reservation", your_reservations_path, class: "sidebar-link active" %></li>
+       <li class="sidebar-item"><%= link_to "Votre Voyages", your_trips_path, class: "sidebar-link" %></li>
+    </ul>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Votre Reservations
+      </div>
+      <div class="panel-body">
+
+        <% @establishments.each do |establishment| %>
+          <% establishment.reservations.each do |reservation| %>
+            <div class= "row">
+              <div class="col-md-2">
+                <%= reservation.start_date.strftime("%w") %>
+              </div>
+              <div class="col-md-2">
+                <%= reservation.end_date.strftime("%w") %>
+              </div>
+                <%= link_to establishments_path(reservation.establishment) do |f| %>
+                  <%= image_tag reservation.establishment.cover_photo(:thumb) %>
+                <% end %>
+            </div>
+            <div class="col-md-3 text-right">
+              <%= render partial: "reviews/host_form", locals: {reservation: reservation} %>
+            </div>
+          <% end %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

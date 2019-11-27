@@ -1,0 +1,64 @@
+.page-footer {
+  background: #1B1F45;
+  color: #fff;
+}
+
+.page-footer hr{
+  background-color: #4A4D76;
+
+}
+
+.page-footer-top {
+  background: #0A0E3D;
+  color: #4A4D76;
+}
+
+.page-footer-top a {
+  color: #4A4D76;
+}
+
+.page-footer-top a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.page-footer-center p {
+  margin-bottom: 0.5em;
+}
+
+.page-footer-center a {
+  color: #fff;
+}
+
+.page-footer-center a:hover {
+  opacity: 10;
+  text-decoration: none;
+}
+
+/* Style for "Oval" */
+.oval {
+  width: 637px;
+  height: 450px;
+  transform: rotate(-192deg);
+  box-shadow: 0 20px 57px rgba(0, 0, 0, 0.02);
+  background-image: linear-gradient(200deg, #ffffff 0%, #ffffff 100%);
+  opacity: 0.03;
+}
+
+/* Style for "Mask" */
+.mask {
+  width: 1441px;
+  height: 668px;
+  background-image: linear-gradient(180deg, #1e2248 0%, #14183e 100%);
+}
+
+/* Style for "Mask Copy" */
+.mask-copy {
+  width: 1441px;
+  height: 74px;
+  background-color: #090e3c;
+}
+
+.ap-footer {
+  display: none;
+}

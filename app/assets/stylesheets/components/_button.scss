@@ -1,0 +1,136 @@
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+}
+
+
+.btn-flat:hover {
+  background: #1BCB7F;
+  color: white;
+}
+
+.btn-flat-subscribe {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 0px;
+  background: #266EFF;
+  transition: background 0.3s ease;
+}
+
+.btn-flat-subscribe:hover {
+  background: #3B5997;
+  color: white;
+}
+
+.btn-flat-home-search {
+  color: white;
+  padding: 15px 24px;
+  border-radius: 0px;
+  background: #266EFF;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.btn-flat-home-search:hover {
+  background: #3B5997;
+  color: white;
+}
+
+.btn-transparent {
+  background: none;
+  border: 0px
+}
+
+.navbar .fas, .far{
+  color: white;
+  margin-right: 1em;
+  font-size: 1.10em;
+}
+
+.btn-connection {
+  background:    none;
+  border:        1px solid #ffffff;
+  border-radius: 5px;
+  padding:       5px 13px;
+  color:         #ffffff;
+  display:       inline-block;
+  text-align:    center;
+  font-weight:   bold;
+  text-transform: uppercase;
+  transition: background 0.2s;
+
+}
+
+.btn-connection:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background: #266EFF;
+  border: none;
+  transition: all 0.2s ease-out;
+  -webkit-transition: background 0.2s ease-in;
+}
+
+.btn-search-room {
+  background:    transparent;
+  border-radius: 0px;
+  padding:       8px 20px;
+  color:         #266EFF;
+  display:       inline-block;
+  border:        1px solid #266EFF;
+  text-align:    center;
+  font-weight:   bold;
+}
+
+.btn-show-room {
+  background:    #266EFF;
+  border-radius: 1px;
+  padding:       10px 15px;
+  color:         white;
+  display:       inline-block;
+  text-align:    center;
+  font-weight:   bold;
+  font-size:     13px;
+}
+
+.btn-show-room:hover {
+  background:    transparent;
+  border-radius: 1px;
+  padding:       9px 14px;
+  color:         #266EFF;
+  display:       inline-block;
+  border:        1px solid #266EFF;
+  text-align:    center;
+  font-weight:   bold;
+  font-size:     13px;
+}
+
+.btn-reserve-room {
+  background:    #266EFF;
+  border-radius: 1px;
+  padding:       10px 45px;
+  color:         white;
+  display:       inline-block;
+  text-align:    center;
+  font-weight:   bold;
+  font-size:     16px;
+}
+
+.btn-reserve-room:hover {
+  background:    transparent;
+  border-radius: 1px;
+  padding:       9px 44px;
+  color:         #266EFF;
+  display:       inline-block;
+  border:        1px solid #266EFF;
+  text-align:    center;
+  font-weight:   bold;
+}
+
+.fas {
+  margin-right: 4px;
+  margin-left: 4px;
+}
