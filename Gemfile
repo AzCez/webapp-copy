@@ -28,7 +28,7 @@ gem 'coffee-rails', '~> 4.2'
 
 #IMAGES
 gem 'mini_magick'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 
 #EMAIL
 gem 'postmark-rails'
